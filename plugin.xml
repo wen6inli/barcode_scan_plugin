@@ -79,11 +79,46 @@
 			</feature>
 		</config-file>
 
+
+
 <!-- 		<source-file src="src/android/aamva/Decoder.java" target-dir="src/org/pluginporo/barcodescan/aamva" />
 		<source-file src="src/android/aamva/DriverLicense.java" target-dir="src/org/pluginporo/barcodescan/aamva" /> -->
 		<source-file src="src/android/BarcodeScanPlugin.java" target-dir="src/org/pluginporo/barcodescan" />
 
 
 	</platform>
+
+	  <!-- ios -->
+    <platform name="ios">
+        <source-file src="src/ios/sources/CDVpdf417.m" />
+        <header-file src="src/ios/sources/CDVpdf417.h" />
+        
+        <framework src="libc++.dylib" />
+        <framework src="libz.dylib" />
+        <framework src="libiconv.dylib" />
+
+        <framework src="CoreVideo.framework" />
+        <framework src="OpenGLES.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="QuartzCore.framework" />
+        <framework src="AudioToolbox.framework" />
+        
+        <framework src="src/ios/pdf417.framework" custom="true" />
+
+				<resource-file src="src/ios/resources/light.png" />
+				<resource-file src="src/ios/resources/light@2x.png" />
+				<resource-file src="src/ios/resources/lighton.png" />
+				<resource-file src="src/ios/resources/lighton@2x.png" />
+				<resource-file src="src/ios/resources/beep_pdf417.mp3" />
+				<resource-file src="src/ios/resources/de.strings" />
+				<resource-file src="src/ios/resources/en.strings" />
+				<resource-file src="src/ios/resources/hr.strings" />
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="BarcodeScanPlugin">
+                <param name="ios-package" value="CDVpdf417" />
+            </feature>
+        </config-file>
+    </platform>
 
 </plugin>

@@ -6,6 +6,7 @@ PDF417/QRCode Barcode Scan Plugin for Cordova / PhoneGap.
 ## Supported Platforms
 
 - Android
+- IOS
 
 ## How to use
 
